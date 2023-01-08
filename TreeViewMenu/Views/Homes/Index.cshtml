@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/Contents/css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <a href="~/Views/Homes/CreateTable">Создать Ветвь</a>
+    <div>
+        @Html.Raw(ViewBag.DOM_TreeViewMenu)
+        <input type="submit" />
+    </div>
+    <script src="~/Contents/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="~/Contents/js/bootstrap.js" type="text/javascript"></script>
+</body>
+</html>
+
+

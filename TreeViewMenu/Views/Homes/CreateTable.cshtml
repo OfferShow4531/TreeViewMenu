@@ -1,0 +1,69 @@
+﻿@model TreeViewMenu.Models.Menues
+
+@{
+    ViewBag.Title = "CreateTable";
+}
+
+<h2>CreateTable</h2>
+
+
+@using (Html.BeginForm())
+{
+    <form method="post">
+        <div class="body-content">
+            <label class="body-content">MenuNumber</label>
+            <div>
+                <input type="number" name="menunumber" value="@Model.MenuNumber" />
+            </div>
+        </div>
+        <div class="body-content">
+            <label class="body-content">ParentNumber</label>
+            <div>
+                <input type="number" name="parentnumber" value="@Model.ParentNumber" />
+            </div>
+        </div>
+        <div class="body-content">
+            <label class="body-content">MenuName</label>
+            <div>
+                <input type="text" name="menuname" value="@Model.MenuName" />
+            </div>
+        </div>
+        <div class="body-content">
+            <label class="body-content">Uri</label>
+            <div>
+                <input type="text" name="uri" value="@Model.Uri" />
+            </div>
+        </div>
+        <div class="body-content">
+            <label class="body-content">Icon</label>
+            <div>
+                <input type="text" name="icon" value="@Model.Icon" />
+            </div>
+        </div>
+        <div class="body-content">
+            <div>
+                <button type="submit">Add</button>
+                @{
+                    if (Model.MenuNumber.ToString().Length == 0 || Model.ParentNumber.ToString().Length == 0 || Model.MenuName.Length == 0)
+                    {
+                        Response.Write("<script>alert('Data fail loaded')</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Data inserted successfully')</script>");
+                    }
+                }
+            </div>
+        </div>
+       
+    </form>
+    <a href="~/Views/Homes/Index">Return to Main page</a>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
